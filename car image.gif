@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Car GIF</title>
+    <style>
+        /* Style for the car */
+        .car {
+            position: absolute;
+            top: 50%; /* Center vertically */
+            left: 0;
+            transform: translateY(-50%);
+            width: 100px; /* Adjust size as needed */
+            animation: moveCar 5s linear infinite;
+        }
+
+        /* Keyframes for car animation */
+        @keyframes moveCar {
+            0% {
+                left: -100px;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Car GIF image -->
+    <img src="car-image.gif" alt="Moving Car" class="car">
+
+</body>
+</html>

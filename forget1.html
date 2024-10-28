@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .reset-container {
+            background-color: #ffffff;
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            color: #333333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333333;
+        }
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        document.getElementById("resetPasswordForm").addEventListener("submit", function(event) {
+          const newPassword = document.getElementById("newPassword").value;
+          const confirmPassword = document.getElementById("confirmPassword").value;
+          const errorMessage = document.getElementById("errorMessage");
+    
+          if (newPassword !== confirmPassword) {
+            errorMessage.textContent = "Passwords do not match!";
+            event.preventDefault();  // Prevent form submission
+          } else {
+            errorMessage.textContent = "";  // Clear any error messages
+            alert("Password successfully reset!");  // For demo purposes
+          }
+        });
+      </script>
+
+<div class="reset-container">
+    <h2>Reset Your Password</h2>
+    <form action="/submit-new-password" method="POST">
+        <div class="form-group">
+            <label for="new-password">New Password</label>
+            <input type="password" id="new-password" name="new-password" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+    </form>
+    <p><a href="main2.html"><button type="submit" class="submit-btn">Reset Password</button></a></p>
+</div>
+
+  </script>
+
+</body>
+</html>
